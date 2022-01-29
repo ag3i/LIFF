@@ -1,3 +1,5 @@
+// pages/index.vue
+
 <template>
   <section class="container">
     <p class="line-id">LINE ID：{{ lineId }}</p>
