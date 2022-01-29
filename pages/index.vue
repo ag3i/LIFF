@@ -1,6 +1,5 @@
 <template>
   <section class="container">
-    <p class="line-id">LINE ID：{{ lineId }}</p>
     <div class="form">
       <div class="control">
         <input class="input" type="text" placeholder="お名前" v-model="formData.name">
@@ -56,10 +55,11 @@ export default {
         })
     },
     handleCancel() {
-      if (!this.canUseLIFF()) {
-        return
-      }
-      window.liff.closeWindow()
+      if (!liff.isInClient()) {
+        window.alert('This button is unavailable as LIFF is currently being opened in an external browser.');
+      } else {
+        liff.closeWindow();
+  }
     },
     canUseLIFF() {
       return navigator.userAgent.indexOf('Line') !== -1 && window.liff
