@@ -52,7 +52,7 @@ export default {
           }
         ])
         .then(() => {
-          window.liff.closeWindow()
+          liff.closeWindow()
         })
         .catch(e => {
           alert('Error sending message: ' + e)
