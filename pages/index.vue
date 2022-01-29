@@ -14,8 +14,6 @@
 </template>
 
 <script>
-import liff from '@line/liff'
-
 export default {
   data() {
     return {
@@ -25,14 +23,18 @@ export default {
       lineId: null
     }
   },
-  mounted() {  
-    if (!this.canUseLIFF()) {
-      return
-    }
-
-    liff.init(data => {
-      this.lineId = data.context.userId || null
-    })
+  mounted() {
+    // 最初に必ず実行する
+    liff
+      .init({ liffId: 'myLiffId' }) // LIFF IDを貼る
+      .then(() => {
+        this.loggedIn = liff.isLoggedIn()
+        this.getProfile()
+      })
+      .catch((err) => {
+        // Error happens during initialization
+        this.occoredError = 'error:' + err
+      })
   },
   methods: {
     onSubmit() {
