@@ -23,18 +23,14 @@ export default {
       lineId: null
     }
   },
-  mounted() {
-    // 最初に必ず実行する
-    liff
-      .init({ liffId: 'myLiffId' }) // LIFF IDを貼る
-      .then(() => {
-        this.loggedIn = liff.isLoggedIn()
-        this.getProfile()
-      })
-      .catch((err) => {
-        // Error happens during initialization
-        this.occoredError = 'error:' + err
-      })
+  mounted() {  
+    if (!this.canUseLIFF()) {
+      return
+    }
+
+    window.liff.init(data => {
+      this.lineId = data.context.userId || null
+    })
   },
   methods: {
     onSubmit() {
@@ -42,7 +38,7 @@ export default {
         return
       }
 
-      liff
+      window.liff
         .sendMessages([
           {
             type: 'text',
@@ -54,20 +50,20 @@ export default {
           }
         ])
         .then(() => {
-          liff.closeWindow()
+          window.liff.closeWindow()
         })
         .catch(e => {
-          alert('Error sending message: ' + e)
+          window.alert('Error sending message: ' + e)
         })
     },
     handleCancel() {
       if (!this.canUseLIFF()) {
         return
       }
-      liff.closeWindow()
+      window.liff.closeWindow()
     },
     canUseLIFF() {
-      return navigator.userAgent.indexOf('Line') !== -1 && liff
+      return navigator.userAgent.indexOf('Line') !== -1 && window.liff
     }
   }
 }

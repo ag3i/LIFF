@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'nuxt-liff-money',
+    title: '料金明細',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -9,7 +9,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    
+    // script: [{ src: 'https://d.line-scdn.net/liff/1.0/sdk.js' }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -33,8 +33,6 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
-
-    '@line/liff',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
