@@ -42,6 +42,13 @@ export default {
         width: 500,
         height: 500,
         pieHole: 0.4,
+        pieSliceTextStyle: {
+            color: 'black',
+          },
+          slices: {
+            0: { color: 'yellow' },
+            1: { color: 'transparent' }
+          }
       }
     }
   },
@@ -49,7 +56,6 @@ export default {
     if (!this.canUseLIFF()) {
       return
     }
-
     window.liff.init(data => {
       this.lineId = data.context.userId || null
     })
