@@ -1,5 +1,3 @@
-// pages/index.vue
-
 <template>
   <section class="container">
     <p class="line-id">LINE ID：{{ lineId }}</p>
@@ -12,9 +10,9 @@
     </div>
   </section>
 </template>
+
 <script>
 import liff from '@line/liff'
-
 export default {
   data() {
     return {
@@ -29,7 +27,7 @@ export default {
       return
     }
 
-    liff.init(data => {
+    window.liff.init(data => {
       this.lineId = data.context.userId || null
     })
   },
@@ -39,7 +37,7 @@ export default {
         return
       }
 
-      liff
+      window.liff
         .sendMessages([
           {
             type: 'text',
@@ -51,20 +49,20 @@ export default {
           }
         ])
         .then(() => {
-          liff.closeWindow()
+          window.liff.closeWindow()
         })
         .catch(e => {
-          alert('Error sending message: ' + e)
+          window.alert('Error sending message: ' + e)
         })
     },
     handleCancel() {
       if (!this.canUseLIFF()) {
         return
       }
-      liff.closeWindow()
+      window.liff.closeWindow()
     },
     canUseLIFF() {
-      return navigator.userAgent.indexOf('Line') !== -1 && liff
+      return navigator.userAgent.indexOf('Line') !== -1 && window.liff
     }
   }
 }
