@@ -74,7 +74,7 @@ export default {
 </script>
 
 <style>
-.container1 {
+.container {
   margin: 0 auto;
   padding: 20px;
   min-height: 100vh;
@@ -87,4 +87,14 @@ export default {
 .form > * {
   margin-bottom: 10px;
 }
+
+.container1 {
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 </style>
