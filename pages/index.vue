@@ -1,27 +1,48 @@
 <template>
-  <section class="container">
-    <div>
-      <MyButton />
-    </div>
-    <div class="form">
-      <div class="control">
-        <input class="input" type="text" placeholder="お名前" v-model="formData.name">
-      </div>
-      <button class="button is-info is-fullwidth" @click="onSubmit()">送信する</button>
-      <button class="button is-light is-fullwidth" @click="handleCancel()">キャンセル</button>
-    </div>
-  </section>
+  <div class="container">
+    <el-row>
+      <el-button type="warning" round>AWS</el-button>
+      <el-button type="success" round>GCP</el-button>
+      <el-button type="primary" round>Azure</el-button>
+    </el-row>  
+      <chart
+        :chartType="chartType"
+        :chartData="chartData"
+        :chartOptions="chartOptions"
+      />
+  </div>
 </template>
 
 <script>
-// import liff from '@line/liff'
+import Chart from '@/components/chart.vue'
 export default {
+  
+  components: {
+    Chart,
+  },
+  
   data() {
     return {
       formData: {
         name: ''
       },
-      lineId: null
+      lineId: null,
+
+      chartType: 'PieChart',
+      chartData: [
+        ['年', '売上',],
+        ['2014', 1000],
+        ['2015', 1170],
+        ['2016', 660],
+        ['2017', 1030]
+      ],
+      chartOptions: {
+        title: '会社の損益',
+        subtitle: '売上',
+        width: 500,
+        height: 500,
+        pieHole: 0.4,
+      }
     }
   },
   mounted() {  
@@ -47,20 +68,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.container {
-  margin: 0 auto;
-  padding: 20px;
-  min-height: 100vh;
-}
-
-.line-id {
-  margin-bottom: 30px;
-}
-
-.form > * {
-  margin-bottom: 10px;
-}
-
-</style>
