@@ -12,8 +12,9 @@
     </div>
   </section>
 </template>
-
 <script>
+import liff from '@line/liff'
+
 export default {
   data() {
     return {
