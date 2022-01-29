@@ -1,10 +1,8 @@
 <template>
   <section class="container">
-  <div class="container1">
     <div>
       <MyButton />
     </div>
-  </div>
     <div class="form">
       <div class="control">
         <input class="input" type="text" placeholder="お名前" v-model="formData.name">
@@ -36,29 +34,6 @@ export default {
     })
   },
   methods: {
-    onSubmit() {
-      if (!this.canUseLIFF()) {
-        return
-      }
-
-      window.liff
-        .sendMessages([
-          {
-            type: 'text',
-            text: `お名前：\n${this.formData.name}`
-          },
-          {
-            type: 'text',
-            text: '送信が完了しました'
-          }
-        ])
-        .then(() => {
-          window.liff.closeWindow()
-        })
-        .catch(e => {
-          window.alert('Error sending message: ' + e)
-        })
-    },
     handleCancel() {
       if (!liff.isInClient()) {
         window.alert('This button is unavailable as LIFF is currently being opened in an external browser.');
@@ -86,15 +61,6 @@ export default {
 
 .form > * {
   margin-bottom: 10px;
-}
-
-.container1 {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 
 </style>
