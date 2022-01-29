@@ -1,8 +1,10 @@
 <template>
   <section class="container">
+  <div class="container1">
     <div>
       <MyButton />
     </div>
+  </div>
     <div class="form">
       <div class="control">
         <input class="input" type="text" placeholder="お名前" v-model="formData.name">
@@ -14,13 +16,8 @@
 </template>
 
 <script>
-import MyButton from "~/components/MyButton.vue";
-
+// import liff from '@line/liff'
 export default {
-  components: {
-    MyButton
-  },
-
   data() {
     return {
       formData: {
@@ -77,7 +74,7 @@ export default {
 </script>
 
 <style>
-.container {
+.container1 {
   margin: 0 auto;
   padding: 20px;
   min-height: 100vh;
@@ -89,15 +86,5 @@ export default {
 
 .form > * {
   margin-bottom: 10px;
-}
-
-.MyButton {
-  background-color: #00a656;
-  border-radius: 1.5em;
-  box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.2);
-  padding: 1em 2em;
-  color: #ffffff;
-  font-weight: bold;
-  text-decoration: none;
 }
 </style>

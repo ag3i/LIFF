@@ -3,7 +3,7 @@
 </template>
 
 <style>
-.container {
+.MyButton {
     background-color: #00a656;
     border-radius: 1.5em;
     box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.2);
