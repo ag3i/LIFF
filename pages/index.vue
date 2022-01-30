@@ -46,8 +46,8 @@ export default {
         
       ],
       chartOptions: {
-        width: 400,
-        height: 400,
+        width: 450,
+        height: 450,
         pieHole: 0.5,
         pieSliceTextStyle: {
             color: 'black',
