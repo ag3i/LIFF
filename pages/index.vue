@@ -1,5 +1,5 @@
 <template>
-  <div class="grid-content bg-purple-dark">
+  <div class="container">
     <div style="text-align: center">
       <el-row>
         <el-button type="warning" round>AWS</el-button>
@@ -15,6 +15,7 @@
       <div style="text-align: center">
         <el-button  type="danger" icon="el-icon-close" circle @click="handleCancel()"></el-button>
       </div>
+      <br>
   </div>
 </template>
 
@@ -46,9 +47,11 @@ export default {
         
       ],
       chartOptions: {
-        width: 450,
-        height: 450,
+        width: 700,
+        height: 700,
         pieHole: 0.4,
+        backgroundColor: '#EBEEF5',
+        chartArea:{left:20,top:0},
         pieSliceTextStyle: {
             color: 'black',
           },
@@ -83,7 +86,7 @@ export default {
 }
 </script>
 <style >
-  container{
-
- }
+.container {
+  background-color:#EBEEF5;
+} 
 </style>
