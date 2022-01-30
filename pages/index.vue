@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="grid-content bg-purple-dark">
     <div style="text-align: center">
       <el-row>
         <el-button type="warning" round>AWS</el-button>
@@ -36,26 +36,30 @@ export default {
       chartType: 'PieChart',
       chartData: [
         ['Service', 'Cost',],
-        ['EC2', 1000],
         ['ECS', 1170],
-        ['LAMDBA', 660],
+        ['EC2', 1000],
+        ['EK1', 1055],
+        ['EK1', 1054],
         ['EKS', 1030],
-        ['EK1', 1054],
-        ['EK1', 1054],
-        ['EK1', 1054],
+        ['LAMDBA', 760],
+        ['Other', 300],
         
       ],
       chartOptions: {
-        width: 470,
-        height: 470,
-        pieHole: 0.5,
+        width: 450,
+        height: 450,
+        pieHole: 0.4,
         pieSliceTextStyle: {
             color: 'black',
           },
-        sliceVisibilityThreshold: .1,
         slices: {
-          0: { color: '#112036' },
-          1: { color: 'transparent' }
+          0: { color: '#FFD700' },
+          1: { color: '#3399FF' },
+          2: { color: '#606266' },
+          3: { color: '#797B80' },
+          4: { color: '#C0C4CC' },
+          5: { color: '#DCDFE6' },
+          6: { color: '#E4E7ED' }
         }
       }
     }
