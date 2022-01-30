@@ -1,11 +1,11 @@
 <template>
   <div class="container">
-    <el-row>
+      <el-alert center>
       <el-button type="warning" round>AWS</el-button>
       <el-button type="success" round>GCP</el-button>
       <el-button type="primary" round>Azure</el-button>
-    </el-row>  
-      <chart
+      </el-alert>
+      <chart 
         :chartType="chartType"
         :chartData="chartData"
         :chartOptions="chartOptions"
@@ -30,25 +30,28 @@ export default {
 
       chartType: 'PieChart',
       chartData: [
-        ['年', '売上',],
-        ['2014', 1000],
-        ['2015', 1170],
-        ['2016', 660],
-        ['2017', 1030]
+        ['Service', 'Cost',],
+        ['EC2', 1000],
+        ['ECS', 1170],
+        ['LAMDBA', 660],
+        ['EKS', 1030],
+        ['EK1', 1054],
+        ['EK1', 1054],
+        ['EK1', 1054],
+        
       ],
       chartOptions: {
-        title: '会社の損益',
-        subtitle: '売上',
-        width: 500,
-        height: 500,
-        pieHole: 0.4,
+        width: 700,
+        height: 700,
+        pieHole: 0.5,
         pieSliceTextStyle: {
             color: 'black',
           },
-          slices: {
-            0: { color: 'yellow' },
-            1: { color: 'transparent' }
-          }
+        sliceVisibilityThreshold: .1,
+        slices: {
+          0: { color: '#112036' },
+          1: { color: 'transparent' }
+        }
       }
     }
   },
