@@ -13,7 +13,7 @@
         :chartOptions="chartOptions"
       />
       <div style="text-align: center">
-        <el-button type="danger" icon="el-icon-close" circle></el-button>
+        <el-button  type="danger" icon="el-icon-close" circle @click="handleCancel()"></el-button>
       </div>
   </div>
 </template>
@@ -46,8 +46,8 @@ export default {
         
       ],
       chartOptions: {
-        width: 450,
-        height: 450,
+        width: 500,
+        height: 500,
         pieHole: 0.5,
         pieSliceTextStyle: {
             color: 'black',
@@ -70,11 +70,10 @@ export default {
   },
   methods: {
     handleCancel() {
-      if (!liff.isInClient()) {
-        window.alert('This button is unavailable as LIFF is currently being opened in an external browser.');
-      } else {
-        liff.closeWindow();
-  }
+      if (!this.canUseLIFF()) {
+        return
+      }
+      window.liff.closeWindow()
     },
     canUseLIFF() {
       return navigator.userAgent.indexOf('Line') !== -1 && window.liff
@@ -82,3 +81,8 @@ export default {
   }
 }
 </script>
+<style >
+  container{
+
+ }
+</style>
