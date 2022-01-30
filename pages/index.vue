@@ -51,7 +51,7 @@ export default {
         height: 700,
         pieHole: 0.4,
         backgroundColor: '#EBEEF5',
-        
+        chartArea:{left:10,top:0},
         pieSliceTextStyle: {
             color: 'black',
           },
