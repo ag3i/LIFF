@@ -1,15 +1,20 @@
 <template>
   <div class="container">
-      <el-alert center>
-      <el-button type="warning" round>AWS</el-button>
-      <el-button type="success" round>GCP</el-button>
-      <el-button type="primary" round>Azure</el-button>
-      </el-alert>
+    <div style="text-align: center">
+      <el-row>
+        <el-button type="warning" round>AWS</el-button>
+        <el-button type="success" round>GCP</el-button>
+        <el-button type="primary" round>Azure</el-button>
+      </el-row> 
+    </div>
       <chart 
         :chartType="chartType"
         :chartData="chartData"
         :chartOptions="chartOptions"
       />
+      <div style="text-align: center">
+        <el-button type="danger" icon="el-icon-close" circle></el-button>
+      </div>
   </div>
 </template>
 
@@ -41,8 +46,8 @@ export default {
         
       ],
       chartOptions: {
-        width: 700,
-        height: 700,
+        width: 400,
+        height: 400,
         pieHole: 0.5,
         pieSliceTextStyle: {
             color: 'black',
