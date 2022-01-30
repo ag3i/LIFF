@@ -46,8 +46,8 @@ export default {
         
       ],
       chartOptions: {
-        width: 500,
-        height: 500,
+        width: 470,
+        height: 470,
         pieHole: 0.5,
         pieSliceTextStyle: {
             color: 'black',
@@ -70,9 +70,6 @@ export default {
   },
   methods: {
     handleCancel() {
-      if (!this.canUseLIFF()) {
-        return
-      }
       window.liff.closeWindow()
     },
     canUseLIFF() {
