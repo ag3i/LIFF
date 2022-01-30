@@ -52,6 +52,8 @@ export default {
         pieHole: 0.4,
         backgroundColor: '#EBEEF5',
         chartArea:{left:10,top:0},
+        legend: 'none',
+        pieSliceText: 'label',
         pieSliceTextStyle: {
             color: 'black',
           },
