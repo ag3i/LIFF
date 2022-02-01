@@ -56,8 +56,8 @@ export default {
         
       ],
       chartOptions: {
-        width: 620,
-        height: 620,
+        width: 600,
+        height: 600,
         pieHole: 0.4,
         backgroundColor: '#EBEEF5',
         chartArea:{left:0,top:20},
