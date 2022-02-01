@@ -21,7 +21,7 @@
         :chartData="chartData"
         :chartOptions="chartOptions"
       />
-      <div style="text-align: center">
+      <div style="text-align: center" class="button">
         <el-button  type="danger" icon="el-icon-close" circle @click="handleCancel()"></el-button>
       </div>
       <br>
@@ -48,16 +48,16 @@ export default {
         ['Service', 'Cost',],
         ['ECS', 1170],
         ['EC2', 1000],
-        ['EK1', 1055],
-        ['EK1', 1054],
+        ['NAT', 1055],
+        ['RDS', 900],
         ['EKS', 1030],
-        ['LAMDBA', 760],
+        ['Lamdba', 760],
         ['Other', 300],
         
       ],
       chartOptions: {
-        width: 600,
-        height: 600,
+        width: 580,
+        height: 580,
         pieHole: 0.4,
         backgroundColor: '#EBEEF5',
         chartArea:{left:0,top:20},
