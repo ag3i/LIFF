@@ -9,12 +9,12 @@
     </div>
     <br>
     <div class="block" style="text-align: center">
-      <span class="demonstration">Day</span>
       <el-date-picker
         v-model="value1"
         type="date"
         placeholder="Pick a day">
       </el-date-picker>
+      <el-button>検索</el-button>
     </div>
       <chart 
         :chartType="chartType"
