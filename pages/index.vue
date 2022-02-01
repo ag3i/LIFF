@@ -56,11 +56,11 @@ export default {
         
       ],
       chartOptions: {
-        width: 650,
-        height: 650,
+        width: 620,
+        height: 620,
         pieHole: 0.4,
         backgroundColor: '#EBEEF5',
-        chartArea:{left:10,top:0},
+        chartArea:{left:10,top:10},
         legend: 'none',
         pieSliceText: 'label',
         pieSliceTextStyle: {
