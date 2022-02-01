@@ -7,6 +7,15 @@
         <el-button type="primary" round>Azure</el-button>
       </el-row> 
     </div>
+    <br>
+    <div class="block" style="text-align: center">
+      <span class="demonstration">Day</span>
+      <el-date-picker
+        v-model="value1"
+        type="date"
+        placeholder="Pick a day">
+      </el-date-picker>
+    </div>
       <chart 
         :chartType="chartType"
         :chartData="chartData"
@@ -47,8 +56,8 @@ export default {
         
       ],
       chartOptions: {
-        width: 700,
-        height: 700,
+        width: 650,
+        height: 650,
         pieHole: 0.4,
         backgroundColor: '#EBEEF5',
         chartArea:{left:10,top:0},
@@ -66,7 +75,34 @@ export default {
           5: { color: '#DCDFE6' },
           6: { color: '#E4E7ED' }
         }
-      }
+      },
+              pickerOptions: {
+          disabledDate(time) {
+            return time.getTime() > Date.now();
+          },
+          shortcuts: [{
+            text: 'Today',
+            onClick(picker) {
+              picker.$emit('pick', new Date());
+            }
+          }, {
+            text: 'Yesterday',
+            onClick(picker) {
+              const date = new Date();
+              date.setTime(date.getTime() - 3600 * 1000 * 24);
+              picker.$emit('pick', date);
+            }
+          }, {
+            text: 'A week ago',
+            onClick(picker) {
+              const date = new Date();
+              date.setTime(date.getTime() - 3600 * 1000 * 24 * 7);
+              picker.$emit('pick', date);
+            }
+          }]
+        },
+        value1: '',
+        value2: '',
     }
   },
   mounted() {  
@@ -84,7 +120,7 @@ export default {
     canUseLIFF() {
       return navigator.userAgent.indexOf('Line') !== -1 && window.liff
     }
-  }
+  },
 }
 </script>
 <style >
