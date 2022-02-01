@@ -60,7 +60,7 @@ export default {
         height: 620,
         pieHole: 0.4,
         backgroundColor: '#EBEEF5',
-        chartArea:{left:20,top:20},
+        chartArea:{left:0,top:20},
         legend: 'none',
         pieSliceText: 'label',
         pieSliceTextStyle: {
